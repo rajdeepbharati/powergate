@@ -724,13 +724,13 @@ func TestEnabledConfigChange(t *testing.T) {
 }
 
 func requireFilUnstored(ctx context.Context, t *testing.T, client *apistruct.FullNodeStruct, c cid.Cid) {
-	offers, err := client.ClientFindData(ctx, c)
+	offers, err := client.ClientFindData(ctx, c, nil)
 	require.NoError(t, err)
 	require.Empty(t, offers)
 }
 
 func requireFilStored(ctx context.Context, t *testing.T, client *apistruct.FullNodeStruct, c cid.Cid) {
-	offers, err := client.ClientFindData(ctx, c)
+	offers, err := client.ClientFindData(ctx, c, nil)
 	require.NoError(t, err)
 	require.NotEmpty(t, offers)
 }
@@ -1441,7 +1441,7 @@ func requireJobState(t *testing.T, fapi *api.API, jid ffs.JobID, status ffs.JobS
 	var res ffs.Job
 	for !stop {
 		select {
-		case <-time.After(60 * time.Second):
+		case <-time.After(90 * time.Second):
 			t.Fatalf("waiting for job update timeout")
 		case job, ok := <-ch:
 			require.True(t, ok)

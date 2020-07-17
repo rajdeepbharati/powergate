@@ -167,10 +167,11 @@ func waitForDealComplete(client *apistruct.FullNodeStruct, deals []cid.Cid) erro
 			switch di.State {
 			case
 				storagemarket.StorageDealUnknown,
-				storagemarket.StorageDealWaitingForDataRequest,
+				storagemarket.StorageDealWaitingForData,
 				storagemarket.StorageDealProposalAccepted,
 				storagemarket.StorageDealStaged,
 				storagemarket.StorageDealValidating,
+				storagemarket.StorageDealCheckForAcceptance,
 				storagemarket.StorageDealClientFunding,
 				storagemarket.StorageDealPublish,
 				storagemarket.StorageDealPublishing,
