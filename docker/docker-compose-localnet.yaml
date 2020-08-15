@@ -21,7 +21,10 @@ services:
 
   ipfs:
     ports:
+      - 4001:4001
       - 5001:5001
+      - 8080:8080
+      - 8081:8081
 
   lotus:
     image: textile/lotus-devnet:sha-ce1d788
