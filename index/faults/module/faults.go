@@ -124,10 +124,6 @@ func (s *Index) Close() error {
 func (s *Index) start() {
 	defer close(s.finished)
 
-	// Fault index is temporarily disabled until
-	// https://github.com/filecoin-project/lotus/issues/3063
-	// is fixed.
-	return
 	if err := s.updateIndex(); err != nil {
 		log.Errorf("initial updating faults index: %s", err)
 	}
