@@ -45,7 +45,7 @@ require (
 	github.com/muesli/termenv v0.7.4
 	github.com/multiformats/go-multiaddr v0.3.1
 	github.com/multiformats/go-multiaddr-dns v0.2.0
-	github.com/multiformats/go-multihash v0.0.14
+	github.com/multiformats/go-multihash v0.0.15
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/ory/dockertest/v3 v3.6.3
 	github.com/oschwald/geoip2-golang v1.4.0
